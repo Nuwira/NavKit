@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// It holds all required things for a type to specify the requirement of
 /// how the navigation bar with all of it's items look like and behave.
@@ -78,8 +79,8 @@ public extension CustomizableNavigation where Self: UIViewController, Self: UIGe
 
         var titleTextAttributes = navigationBar?.titleTextAttributes ?? [:]
 
-        titleTextAttributes[NSForegroundColorAttributeName] = titleColor
-        titleTextAttributes[NSFontAttributeName] = titleFont
+        titleTextAttributes[NSAttributedString.Key.foregroundColor] = titleColor
+        titleTextAttributes[NSAttributedString.Key.font] = titleFont
 
         navigationBar?.titleTextAttributes = titleTextAttributes
 
@@ -122,7 +123,7 @@ public extension UIViewController {
     /// Action that will be executed when the navigation bar has back button and it's tapped.
     ///
     /// - Parameter sender: The sender of action.
-    func backTapped(_ sender: Any) {
+    @objc func backTapped(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
     }
 }
