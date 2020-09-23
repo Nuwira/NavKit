@@ -52,7 +52,7 @@ class NavKitTests: XCTestCase {
         controller.updateNavigation()
 
         let titleTextAttributes = navController.navigationBar.titleTextAttributes
-        let titleColor = titleTextAttributes?[NSAttributedString.Key.foregroundColor] as! UIColor
+        let titleColor = titleTextAttributes?[NSForegroundColorAttributeName] as! UIColor
 
         XCTAssertNotNil(titleTextAttributes)
         XCTAssertEqual(titleColor, .black)
@@ -62,7 +62,7 @@ class NavKitTests: XCTestCase {
         controller.updateNavigation()
 
         let titleTextAttributes = navController.navigationBar.titleTextAttributes
-        let titleFont = titleTextAttributes?[NSAttributedString.Key.font] as! UIFont
+        let titleFont = titleTextAttributes?[NSFontAttributeName] as! UIFont
 
         XCTAssertNotNil(titleTextAttributes)
         XCTAssertEqual(titleFont, .systemFont(ofSize: 17))

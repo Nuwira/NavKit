@@ -41,7 +41,7 @@ class MainViewController: UIViewController, CustomizableNavigation, UIGestureRec
 
     // MARK: - Actions
 
-    @objc func timerEventOccured(_ sender: Any) {
+    func timerEventOccured(_ sender: Any) {
         if alphaDirection == 0 {
             barAlpha -= 0.1
         } else {
